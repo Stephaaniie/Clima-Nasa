@@ -22,7 +22,6 @@ import ar.com.api.ada.nasa.nasa.models.request.TemperaturaRequest;
 import ar.com.api.ada.nasa.nasa.models.response.PaisResponse;
 import ar.com.api.ada.nasa.nasa.models.response.TemperaturaResponse;
 import ar.com.api.ada.nasa.nasa.services.implementations.PaisService;
-import ar.com.api.ada.nasa.nasa.services.implementations.TemperaturaService;
 
 
 @RestController
@@ -30,25 +29,22 @@ import ar.com.api.ada.nasa.nasa.services.implementations.TemperaturaService;
 public class PaisController {
     @Autowired
     PaisService sPais;
-
-    @Autowired
-    TemperaturaService sTemperatura;
         
     @GetMapping("/temperaturas/paises/{codigoPais}")
     public List<TemperaturaResponse> listarTemperatrasDeUnPaisPorAnio(@PathVariable String codigoPais) {
         
-        return sTemperatura.findByPais(sPais.findById(new ObjectId(codigoPais)));
+        return sPais.findByPais(sPais.findById(new ObjectId(codigoPais)));
     }
 
     @GetMapping("/temperaturas/anios/{anio}")
     public List<PaisResponse> temperaturasPorAnio(@PathVariable int anio){
-        return sTemperatura.findByAnio(anio);
+        return sPais.findByAnio(anio);
 
     }
 
     @GetMapping("/temperaturas/maximas/{codigoPais}")
     public TemperaturaResponse consultarMaximasTemperaturaPais(@PathVariable String codigoPais) { 
-        return sTemperatura.findByMaxTemperatura(sPais.findById(new ObjectId(codigoPais)));
+        return sPais.findByMaxTemperatura(sPais.findById(new ObjectId(codigoPais)));
     }
 
     @GetMapping("/paises")
@@ -69,8 +65,8 @@ public class PaisController {
 
     @PostMapping("/temperaturas")
     public ResponseEntity<Temperatura> ingrearUnaTemperatura(@RequestBody TemperaturaRequest req) {
-        Temperatura temperatura = sTemperatura.saveDatos(req.anio,req.codigoPais,req.grados);
-        return new ResponseEntity<>(sTemperatura.save(temperatura), HttpStatus.CREATED);
+        Temperatura temperatura = sPais.saveDatos(req.anio,req.codigoPais,req.grados);
+        return new ResponseEntity<>(sPais.save(temperatura), HttpStatus.CREATED);
     }
 
     @PutMapping("/paises/{id}")
@@ -81,7 +77,7 @@ public class PaisController {
 
     @DeleteMapping("/temperaturas/{id}")
     public String eliminarTemperatura(@PathVariable String id){
-        sTemperatura.deleteById(new ObjectId(id));
+        sPais.deleteById(new ObjectId(id));
         return "OK";   
     }
 }
