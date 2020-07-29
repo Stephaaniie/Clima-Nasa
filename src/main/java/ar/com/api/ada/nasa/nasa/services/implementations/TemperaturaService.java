@@ -3,7 +3,6 @@ package ar.com.api.ada.nasa.nasa.services.implementations;
 import java.util.List;
 
 import org.bson.types.ObjectId;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import ar.com.api.ada.nasa.nasa.entities.Pais;
@@ -58,18 +57,23 @@ public class TemperaturaService implements ITemperaturaService {
 	}
 
 	public Temperatura saveDatos(int anio, String codigoPais, double grados) {
-		return null;
+		return new Temperatura(anio, codigoPais, grados);
 	}
 
-	public ResponseEntity<TemperaturaResponse> findByMaxTemperatura(Object findByCodigoPais) {
-		return null;
+	public TemperaturaResponse findByMaxTemperatura(Pais pais) {
+		Temperatura temperatura = temperaturaRepository.findByCodigoPais(pais.getCodigoPais());
+		TemperaturaResponse response = new TemperaturaResponse();
+		response.anio = temperatura.getAnio();
+		response.nombrePais = pais.getNombre();
+		response.temperaturaMaxima = pais.MaxTemperatura();
+		return response;
 	}
 
 	public List<PaisResponse> findByAnio(int anio) {
 		return null;
 	}
 
-	public List<TemperaturaResponse> findByPais(Pais findById) {
+	public List<TemperaturaResponse> findByPais(Pais pais) {
 		return null;
 	}
     

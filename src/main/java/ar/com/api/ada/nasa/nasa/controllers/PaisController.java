@@ -35,7 +35,7 @@ public class PaisController {
     }
 
     @GetMapping("/temperaturas/maximas/{codigoPais}")
-    public ResponseEntity<TemperaturaResponse> consultarMaximasTemperaturaPais(@PathVariable String codigoPais) { 
+    public TemperaturaResponse consultarMaximasTemperaturaPais(@PathVariable String codigoPais) { 
         return sTemperatura.findByMaxTemperatura(sPais.findById(new ObjectId(codigoPais)));
     }
 

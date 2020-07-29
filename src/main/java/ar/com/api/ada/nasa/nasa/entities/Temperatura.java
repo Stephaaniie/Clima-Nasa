@@ -15,7 +15,17 @@ public class Temperatura {
 
     private double grados;
 
+	private String codigoPais;
+
 	private List<Pais> paises = new ArrayList<>();
+
+	public Temperatura(int anio, String codigoPais, double grados) {
+		this.anio = anio;
+
+		this.grados = grados;
+
+		this.codigoPais = codigoPais;
+	}
 
 	public int getAnio() {
 		return anio;
@@ -48,5 +58,12 @@ public class Temperatura {
 	public void set_Id(ObjectId _Id) {
 		this._Id = _Id;
 	}
-	
+
+	public String getCodigoPais() {
+		return codigoPais;
+	}
+
+	public void setCodigoPais(String codigoPais) {
+		this.codigoPais = codigoPais;
+	}
 }   

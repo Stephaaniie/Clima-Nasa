@@ -1,5 +1,9 @@
 package ar.com.api.ada.nasa.nasa.entities;
 
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+
 import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -13,6 +17,8 @@ public class Pais {
     private String codigoPais;
     
 	private Temperatura temperatura;
+
+	private List<Integer> temperaturas = new ArrayList<>();
 
 	public Pais(String codigoPais, String nombre) {
 		this.codigoPais = codigoPais;
@@ -48,6 +54,11 @@ public class Pais {
 	}
 
 	public void setTemperatura(Temperatura temperatura) {
+		this.temperaturas.add((int) temperatura.getGrados());
 		this.temperatura = temperatura;
+	}
+
+	public int MaxTemperatura(){
+		return this.temperaturas.stream().max(Comparator.naturalOrder()).get();
 	}
 }

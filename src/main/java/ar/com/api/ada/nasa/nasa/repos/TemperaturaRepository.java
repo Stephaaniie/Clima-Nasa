@@ -1,7 +1,6 @@
 package ar.com.api.ada.nasa.nasa.repos;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.repository.MongoRepository;
@@ -18,6 +17,8 @@ public interface TemperaturaRepository extends MongoRepository<Temperatura,Objec
     Temperatura findByAnio(int anio);
 
     Temperatura findByGrados(double grados);
+
+    Temperatura findByCodigoPais(String codigoPais);
 
     List<Pais> findByPais(Temperatura temperatura);
     
