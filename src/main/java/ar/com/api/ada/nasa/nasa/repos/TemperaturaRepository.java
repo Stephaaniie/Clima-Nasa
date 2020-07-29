@@ -9,7 +9,7 @@ import ar.com.api.ada.nasa.nasa.entities.Temperatura;
 @Repository
 public interface TemperaturaRepository extends MongoRepository<Temperatura,ObjectId> {
     
-    Temperatura findBy_id(ObjectId id);
+    Temperatura findBy_Id(ObjectId id);
 
     Temperatura findByAnio(int anio);
 
