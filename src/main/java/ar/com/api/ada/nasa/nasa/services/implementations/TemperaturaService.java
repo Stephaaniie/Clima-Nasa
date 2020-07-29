@@ -3,10 +3,14 @@ package ar.com.api.ada.nasa.nasa.services.implementations;
 import java.util.List;
 
 import org.bson.types.ObjectId;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import ar.com.api.ada.nasa.nasa.entities.Pais;
 import ar.com.api.ada.nasa.nasa.entities.Temperatura;
 import ar.com.api.ada.nasa.nasa.exceptions.ResourceNotFoundException;
+import ar.com.api.ada.nasa.nasa.models.response.PaisResponse;
+import ar.com.api.ada.nasa.nasa.models.response.TemperaturaResponse;
 import ar.com.api.ada.nasa.nasa.repos.TemperaturaRepository;
 import ar.com.api.ada.nasa.nasa.services.ITemperaturaService;
 
@@ -51,6 +55,22 @@ public class TemperaturaService implements ITemperaturaService {
 	@Override
 	public Long count() {
 		return temperaturaRepository.count();
+	}
+
+	public Temperatura saveDatos(int anio, String codigoPais, double grados) {
+		return null;
+	}
+
+	public ResponseEntity<TemperaturaResponse> findByMaxTemperatura(Object findByCodigoPais) {
+		return null;
+	}
+
+	public List<PaisResponse> findByAnio(int anio) {
+		return null;
+	}
+
+	public List<TemperaturaResponse> findByPais(Pais findById) {
+		return null;
 	}
     
 }

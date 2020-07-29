@@ -8,13 +8,16 @@ public class Pais {
 
     public ObjectId _id;
 
-    private Integer paisId;
-
     private String nombre;
 
-    private String codigoIso;
+    private String codigoPais;
     
 	private Temperatura temperatura;
+
+	public Pais(String codigoPais, String nombre) {
+		this.codigoPais = codigoPais;
+		this.nombre = nombre;
+	}
 
 	public ObjectId get_id() {
 		return _id;
@@ -22,14 +25,6 @@ public class Pais {
 
 	public void set_id(ObjectId _id) {
 		this._id = _id;
-	}
-
-	public Integer getPaisId() {
-		return paisId;
-	}
-
-	public void setPaisId(Integer paisId) {
-		this.paisId = paisId;
 	}
 
 	public String getNombre() {
@@ -40,12 +35,12 @@ public class Pais {
 		this.nombre = nombre;
 	}
 
-	public String getCodigoIso() {
-		return codigoIso;
+	public String getCodigoPais() {
+		return codigoPais;
 	}
 
-	public void setCodigoIso(String codigoIso) {
-		this.codigoIso = codigoIso;
+	public void setCodigoPais(String codigoPais) {
+		this.codigoPais = codigoPais;
 	}
 
 	public Temperatura getTemperatura() {
@@ -55,5 +50,4 @@ public class Pais {
 	public void setTemperatura(Temperatura temperatura) {
 		this.temperatura = temperatura;
 	}
-
 }

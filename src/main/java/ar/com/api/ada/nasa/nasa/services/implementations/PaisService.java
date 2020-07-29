@@ -51,5 +51,9 @@ public class PaisService implements IPaisSrevice{
 	@Override
 	public Long count() {
 		return paisRepository.count();
-	}   
+	}
+
+	public Pais saveDatos(String codigoPais, String nombre) {
+		return new Pais(codigoPais,nombre);
+	}
 }

@@ -11,21 +11,11 @@ public class Temperatura {
 
 	private ObjectId _Id;
 
-    private int temperaturaId;
-
     private int anio;
 
     private double grados;
 
 	private List<Pais> paises = new ArrayList<>();
-
-	public int getTemperaturaId() {
-		return temperaturaId;
-	}
-
-	public void setTemperaturaId(int temperaturaId) {
-		this.temperaturaId = temperaturaId;
-	}
 
 	public int getAnio() {
 		return anio;

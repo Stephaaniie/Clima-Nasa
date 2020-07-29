@@ -2,9 +2,9 @@ package ar.com.api.ada.nasa.nasa.models.request;
 
 public class TemperaturaRequest {
 
-   public String nombrePais = "";
+   public String codigoPais = "";
 
-   public double temperaturaMaxima;
+   public double grados;
 
-   public Integer anio;
+   public int anio;
 }
