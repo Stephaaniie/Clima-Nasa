@@ -5,9 +5,13 @@ import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
-
+import org.springframework.data.mongodb.core.mapping.Document;
+@Document(collation = "Temperaturas")
 public class Temperatura {
+
+	private ObjectId _Id;
 
     private int temperaturaId;
 
@@ -15,5 +19,46 @@ public class Temperatura {
 
     private double grados;
 
-    //private List<Pais> paises = new ArrayList<>();
+	private List<Pais> paises = new ArrayList<>();
+
+	public int getTemperaturaId() {
+		return temperaturaId;
+	}
+
+	public void setTemperaturaId(int temperaturaId) {
+		this.temperaturaId = temperaturaId;
+	}
+
+	public int getAnio() {
+		return anio;
+	}
+
+	public void setAnio(int anio) {
+		this.anio = anio;
+	}
+
+	public double getGrados() {
+		return grados;
+	}
+
+	public void setGrados(double grados) {
+		this.grados = grados;
+	}
+
+	public List<Pais> getPaises() {
+		return paises;
+	}
+
+	public void setPaises(List<Pais> paises) {
+		this.paises = paises;
+	}
+
+	public ObjectId get_Id() {
+		return _Id;
+	}
+
+	public void set_Id(ObjectId _Id) {
+		this._Id = _Id;
+	}
+	
 }   
