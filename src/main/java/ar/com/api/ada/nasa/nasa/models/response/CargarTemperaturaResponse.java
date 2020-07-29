@@ -1,4 +1,4 @@
-package ar.com.ada.api.challenge.models.response;
+package ar.com.api.ada.nasa.nasa.models.response;
 
 public class CargarTemperaturaResponse {
     public boolean isOk = false;

@@ -1,6 +1,18 @@
 # Clima-Nasa
 WEB API. Proyecto en Spring web con la utilización de Spring data, MongoDB (no sql). Challenge el cual se solicito implemntar WebMetodos en el informe que se adjuntara a continuación:
 
+<div style="width: 100%">
+ <img width="49.15%" src="https://github.com/Stephaaniie/Clima-Nasa/blob/master/src/main/resources/consigna/consigna1.png"/>
+</div>
+
+<div style="width: 100%">
+ <img width="49.15%" src="https://github.com/Stephaaniie/Clima-Nasa/blob/master/src/main/resources/consigna/consigna2.png"/>
+</div>
+
+<div style="width: 100%">
+ <img width="49.15%" src="https://github.com/Stephaaniie/Clima-Nasa/blob/master/src/main/resources/consigna/consigna3.png"/>
+</div>
+
 ### POSTMAN :shipit:
 Para la solicitud de los WebMetodos
 
