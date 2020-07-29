@@ -5,11 +5,21 @@ import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
-import ar.com.api.ada.nasa.nasa.entities.*;
-import ar.com.api.ada.nasa.nasa.models.request.*;
-import ar.com.api.ada.nasa.nasa.models.response.*;
+import ar.com.api.ada.nasa.nasa.entities.Pais;
+import ar.com.api.ada.nasa.nasa.entities.Temperatura;
+import ar.com.api.ada.nasa.nasa.models.request.PaisRequest;
+import ar.com.api.ada.nasa.nasa.models.request.TemperaturaRequest;
+import ar.com.api.ada.nasa.nasa.models.response.PaisResponse;
+import ar.com.api.ada.nasa.nasa.models.response.TemperaturaResponse;
 import ar.com.api.ada.nasa.nasa.services.implementations.PaisService;
 import ar.com.api.ada.nasa.nasa.services.implementations.TemperaturaService;
 
