@@ -1,5 +1,6 @@
 package ar.com.api.ada.nasa.nasa.services.implementations;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.bson.types.ObjectId;
@@ -70,11 +71,24 @@ public class TemperaturaService implements ITemperaturaService {
 	}
 
 	public List<PaisResponse> findByAnio(int anio) {
-		return null;
+		List<PaisResponse> paises = new ArrayList<>();
+		PaisResponse paisResponse = new PaisResponse();
+		Temperatura temperatura = temperaturaRepository.findByAnio(anio);
+		paisResponse.grados = temperatura.getGrados();
+		paisResponse.nombrePais = temperatura.getCodigoPais();
+		paises.add(paisResponse);
+		return paises;
 	}
 
 	public List<TemperaturaResponse> findByPais(Pais pais) {
-		return null;
+		List<TemperaturaResponse> temperaturas = new ArrayList<>();
+		TemperaturaResponse temperaturaResponse = new TemperaturaResponse();
+		Temperatura temperatura = temperaturaRepository.findByCodigoPais(pais.getCodigoPais());
+		temperaturaResponse.anio = temperatura.getAnio();
+		temperaturaResponse.nombrePais = temperatura.getCodigoPais();
+		temperaturaResponse.temperaturaMaxima = pais.MaxTemperatura();
+		temperaturas.add(temperaturaResponse);
+		return temperaturas;
 	}
     
 }

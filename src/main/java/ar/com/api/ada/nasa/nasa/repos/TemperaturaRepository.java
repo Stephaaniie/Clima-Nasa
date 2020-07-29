@@ -18,9 +18,5 @@ public interface TemperaturaRepository extends MongoRepository<Temperatura,Objec
 
     Temperatura findByGrados(double grados);
 
-    Temperatura findByCodigoPais(String codigoPais);
-
-    List<Pais> findByPais(Temperatura temperatura);
-    
-    List<Pais> findByPais(String codigoPais);
+    Temperatura findByCodigoPais(String codigoPais);    
 }
