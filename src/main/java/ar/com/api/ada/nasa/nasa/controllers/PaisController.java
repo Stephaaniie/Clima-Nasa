@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import ar.com.api.ada.nasa.nasa.entities.Pais;
@@ -32,7 +31,6 @@ public class PaisController {
         
     @GetMapping("/temperaturas/paises/{codigoPais}")
     public List<TemperaturaResponse> listarTemperatrasDeUnPaisPorAnio(@PathVariable String codigoPais) {
-        
         return sPais.findByPais(sPais.findById(new ObjectId(codigoPais)));
     }
 
@@ -48,7 +46,7 @@ public class PaisController {
     }
 
     @GetMapping("/paises")
-    public List<Pais> listarTodosLosPaises(@RequestParam(value = "nombre", required = true) String nombre) { 
+    public List<Pais> listarTodosLosPaises() { 
         return  sPais.findAll();
     }
 
@@ -75,7 +73,7 @@ public class PaisController {
         return sPais.save(pais);
     }
 
-    @DeleteMapping("/temperaturas/{id}")
+    @DeleteMapping("/temperaturas/paises/{id}")
     public String eliminarTemperatura(@PathVariable String id){
         sPais.deleteById(new ObjectId(id));
         return "OK";   

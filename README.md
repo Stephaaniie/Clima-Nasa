@@ -15,6 +15,9 @@ WEB API. Proyecto en Spring web con la utilización de Spring data, MongoDB (no 
 
 ### POSTMAN :shipit:
 Para la solicitud de los WebMetodos
+Acontinuacion se le deja el acceso a los request realizados en postman para la aplicación.
+
+<a href="https://documenter.getpostman.com/view/12223320/T1Dv6ZEo" target="_blank">ACCESO REQUEST POSTMAN <a>
 
 ### HEROKU :computer:
 Con Mongo DB
